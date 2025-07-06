@@ -3,7 +3,7 @@
 using namespace std;
 
 
-// base-derived1(Base class for derived2)-derived2
+ // two or more Base classes and one derived class
 
 
 class Animal{
@@ -17,31 +17,28 @@ class Animal{
     }
 };
 
-class Dog : public Animal{
+class Omnivors {
     public:
-    int b=a;
-    void bark()
+     
+    void status()
     {
-        cout<<"Dog is barking"<<endl;
+        cout<<"i am Omnivors"<<endl;
     }
 };
 
-class puppy: public Dog{
+class Dog: public Animal,public Omnivors{
     public:
      
-    void play()
+    void bark()
     {
-        cout<<"Puppy is playing"<<endl;
-        cout<<a;
-        cout<<b; // access base class member variable
-        // cout<<Dog::a; // access base class member variable using scope resolution operator
+        cout<<"Dog is Barking"<<endl;
     }
 };
 
 int main()
 {
-    puppy d;
+    Dog d;
     d.eat();  // Inherited from Animal class
-    d.bark(); // Dog's own method
-    d.play(); // Puppy class method
+    d.status ();
+    d.bark(); // Puppy class method
 }

@@ -3,8 +3,7 @@
 using namespace std;
 
 
-  // base- derived1(base class for derived)-derived2
-// Inheritance is a way to form new classes using classes that have already been defined.
+ // two or more Base classes and one derived class
 
 
 class Animal{
@@ -18,9 +17,16 @@ class Animal{
     }
 };
 
- 
+class Omnivors {
+    public:
+     
+    void status()
+    {
+        cout<<"i am Omnivors"<<endl;
+    }
+};
 
-class Dog: public Animal {
+class Dog: public Animal,public Omnivors{
     public:
      
     void bark()
@@ -29,18 +35,9 @@ class Dog: public Animal {
     }
 };
 
-class Omnivors: public Dog {
-    public:
-     
-    void status()
-    {
-        cout<<"I am Omnivors"<<endl;
-    }
-};
-
 int main()
 {
-    Omnivors d;
+    Dog d;
     d.eat();  // Inherited from Animal class
     d.status ();
     d.bark(); // Puppy class method

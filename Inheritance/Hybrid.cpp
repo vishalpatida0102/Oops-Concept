@@ -4,6 +4,7 @@ using namespace std;
 
 
  
+// two or more inheritance 
 
 
 class Animal{

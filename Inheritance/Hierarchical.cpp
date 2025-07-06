@@ -1,9 +1,11 @@
 
+
 #include<iostream>
 using namespace std;
 
 
-// base-derived1(Base class for derived2)-derived2
+// base-derived1-derived2
+// one base class ,multiple derived classes
 
 
 class Animal{
@@ -26,22 +28,24 @@ class Dog : public Animal{
     }
 };
 
-class puppy: public Dog{
+class cat: public Animal{
     public:
      
-    void play()
+    void meou()
     {
-        cout<<"Puppy is playing"<<endl;
+        cout<<"cat is meou"<<endl;
         cout<<a;
-        cout<<b; // access base class member variable
+          
         // cout<<Dog::a; // access base class member variable using scope resolution operator
     }
 };
 
 int main()
 {
-    puppy d;
-    d.eat();  // Inherited from Animal class
-    d.bark(); // Dog's own method
-    d.play(); // Puppy class method
+    cat d;
+    Dog c;
+    d.eat(); // Inherited from Animal class
+    c.eat(); // Inherited from Animal class
+    d.meou(); // Cat class method
+    c.bark(); // Dog's own method
 }
